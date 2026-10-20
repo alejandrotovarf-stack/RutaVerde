@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="rutaverde.controlador.PrincipalControlador">
+    <left>
+        <VBox fx:id="menu" styleClass="barra-lateral" spacing="4" prefWidth="260" minWidth="240">
+            <padding><Insets top="22" right="16" bottom="20" left="16"/></padding>
+            <VBox alignment="CENTER" spacing="2" styleClass="bloque-logo">
+                <ImageView fitWidth="58" fitHeight="58" preserveRatio="true"><image><Image url="@../imagenes/icono-64.png"/></image></ImageView>
+                <Label text="Ruta Verde" styleClass="logo"/>
+                <Label text="AGENCIA DE TURISMO · EJE CAFETERO" styleClass="texto-barra"/>
+            </VBox>
+            <Label text="REGISTRO" styleClass="seccion-menu"/>
+            <Button id="clientes" text="Turistas" styleClass="item-menu" maxWidth="Infinity" onAction="#navegar"><graphic><Region styleClass="icono icono-persona"/></graphic></Button>
+            <Button id="guias" text="Guías" styleClass="item-menu" maxWidth="Infinity" onAction="#navegar"><graphic><Region styleClass="icono icono-bandera"/></graphic></Button>
+            <Region styleClass="separador-menu"/>
+            <Label text="OPERACIÓN" styleClass="seccion-menu"/>
+            <Button id="nuevaReserva" text="Nueva reserva" styleClass="item-menu" maxWidth="Infinity" onAction="#navegar"><graphic><Region styleClass="icono icono-calendario"/></graphic></Button>
+            <Button id="actividades" text="Actividades" styleClass="item-menu" maxWidth="Infinity" onAction="#navegar"><graphic><Region styleClass="icono icono-terreno"/></graphic></Button>
+            <Region styleClass="separador-menu"/>
+            <Label text="ANÁLISIS" styleClass="seccion-menu"/>
+            <Button id="panel" text="Panel" styleClass="item-menu" maxWidth="Infinity" onAction="#navegar"><graphic><Region styleClass="icono icono-grafico"/></graphic></Button>
+            <Button id="reportes" text="Reportes" styleClass="item-menu" maxWidth="Infinity" onAction="#navegar"><graphic><Region styleClass="icono icono-documento"/></graphic></Button>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button text="Cambiar tema" styleClass="boton-tema" maxWidth="Infinity" onAction="#alternarTema"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox>
+            <HBox styleClass="encabezado" alignment="CENTER_LEFT" spacing="14">
+                <Label fx:id="tituloVista" styleClass="migas"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox styleClass="perfil" alignment="CENTER_LEFT" spacing="10">
+                    <Label text="AG" styleClass="avatar"/>
+                    <VBox><Label text="Agente comercial" styleClass="perfil-nombre"/><Label text="Quindío, Colombia" styleClass="texto-suave"/></VBox>
+                </HBox>
+            </HBox>
+            <StackPane fx:id="contenido" styleClass="contenido" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+</BorderPane>

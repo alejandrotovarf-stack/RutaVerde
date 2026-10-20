@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" spacing="18"
+      fx:controller="rutaverde.controlador.ClientesControlador">
+    <padding><Insets top="22" right="36" bottom="28" left="36"/></padding>
+    <VBox spacing="2"><Label text="Turistas" styleClass="titulo"/><Label text="Gestiona los viajeros y sus preferencias" styleClass="subtitulo"/></VBox>
+    <HBox spacing="22" VBox.vgrow="ALWAYS">
+        <VBox fx:id="formulario" styleClass="panel-vidrio" spacing="10" prefWidth="380" minWidth="360">
+            <Label text="Registrar turista" styleClass="titulo-seccion"/>
+            <Label text="Datos del viajero para sus reservas y su voucher." styleClass="texto-suave"/>
+            <TextField fx:id="campoDocumento" promptText="Documento o pasaporte"/>
+            <TextField fx:id="campoNombre" promptText="Nombre completo"/>
+            <TextField fx:id="campoTelefono" promptText="Teléfono"/>
+            <TextField fx:id="campoCorreo" promptText="Correo electrónico"/>
+            <TextField fx:id="campoPais" promptText="País de origen"/>
+            <ComboBox fx:id="comboIdioma" promptText="Idioma preferido" maxWidth="Infinity"/>
+            <Button text="Registrar turista" styleClass="boton-primario" maxWidth="Infinity" onAction="#registrar"><graphic><Region styleClass="icono icono-persona icono-blanco"/></graphic></Button>
+            <Label fx:id="etiquetaMensaje" styleClass="mensaje" wrapText="true"/>
+        </VBox>
+        <VBox styleClass="panel-vidrio" spacing="12" HBox.hgrow="ALWAYS">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Turistas registrados" styleClass="titulo-seccion"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="campoBuscar" promptText="Buscar por nombre o documento…" prefWidth="260"/>
+                <ComboBox fx:id="comboFiltroPais" prefWidth="190"/>
+            </HBox>
+            <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+                <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+                <columns>
+                    <TableColumn text="Documento"><cellValueFactory><PropertyValueFactory property="documentoIdentidad"/></cellValueFactory></TableColumn>
+                    <TableColumn text="Nombre"><cellValueFactory><PropertyValueFactory property="nombreCompleto"/></cellValueFactory></TableColumn>
+                    <TableColumn text="Correo"><cellValueFactory><PropertyValueFactory property="correo"/></cellValueFactory></TableColumn>
+                    <TableColumn text="País"><cellValueFactory><PropertyValueFactory property="paisOrigen"/></cellValueFactory></TableColumn>
+                    <TableColumn text="Idioma"><cellValueFactory><PropertyValueFactory property="idiomaPreferido"/></cellValueFactory></TableColumn>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>

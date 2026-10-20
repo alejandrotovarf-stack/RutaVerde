@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" spacing="18"
+      fx:controller="rutaverde.controlador.GuiasControlador">
+    <padding><Insets top="22" right="36" bottom="28" left="36"/></padding>
+    <VBox spacing="2"><Label text="Guías" styleClass="titulo"/><Label text="Quienes acompañan cada experiencia · un día de guía cubre hasta 8 horas" styleClass="subtitulo"/></VBox>
+    <HBox spacing="22" VBox.vgrow="ALWAYS">
+        <VBox fx:id="formulario" styleClass="panel-vidrio" spacing="10" prefWidth="380" minWidth="360">
+            <Label text="Registrar guía" styleClass="titulo-seccion"/>
+            <TextField fx:id="campoIdentificacion" promptText="Identificación"/>
+            <TextField fx:id="campoNombre" promptText="Nombre"/>
+            <TextField fx:id="campoIdiomas" promptText="Idiomas separados por coma: Español, Inglés"/>
+            <TextField fx:id="campoTelefono" promptText="Teléfono"/>
+            <TextField fx:id="campoTarifa" promptText="Tarifa por día en pesos"/>
+            <Button text="Registrar guía" styleClass="boton-primario" maxWidth="Infinity" onAction="#registrar"><graphic><Region styleClass="icono icono-bandera icono-blanco"/></graphic></Button>
+            <Label fx:id="etiquetaMensaje" styleClass="mensaje" wrapText="true"/>
+        </VBox>
+        <VBox styleClass="panel-vidrio" spacing="12" HBox.hgrow="ALWAYS">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Guías registrados" styleClass="titulo-seccion"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="campoBuscar" promptText="Buscar por nombre o identificación…" prefWidth="290"/>
+            </HBox>
+            <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+                <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+                <columns>
+                    <TableColumn text="Identificación"><cellValueFactory><PropertyValueFactory property="identificacion"/></cellValueFactory></TableColumn>
+                    <TableColumn text="Nombre"><cellValueFactory><PropertyValueFactory property="nombre"/></cellValueFactory></TableColumn>
+                    <TableColumn text="Idiomas"><cellValueFactory><PropertyValueFactory property="idiomas"/></cellValueFactory></TableColumn>
+                    <TableColumn text="Tarifa/día"><cellValueFactory><PropertyValueFactory property="tarifaDia"/></cellValueFactory></TableColumn>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>

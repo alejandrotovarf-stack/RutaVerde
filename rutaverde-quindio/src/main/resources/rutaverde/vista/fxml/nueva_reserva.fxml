@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="20" styleClass="pantalla" fx:controller="rutaverde.controlador.NuevaReservaControlador">
+    <VBox spacing="12" styleClass="tarjeta" HBox.hgrow="ALWAYS">
+        <Label text="Nueva reserva" styleClass="titulo"/>
+        <Label text="Cliente" styleClass="etiqueta-campo"/>
+        <ComboBox fx:id="selectorCliente" maxWidth="Infinity"/>
+        <Label text="Producto" styleClass="etiqueta-campo"/>
+        <ComboBox fx:id="selectorProducto" maxWidth="Infinity"/>
+        <Label text="Fecha de viaje" styleClass="etiqueta-campo"/>
+        <DatePicker fx:id="selectorFecha" maxWidth="Infinity"/>
+        <Label text="Viajeros" styleClass="etiqueta-campo"/>
+        <Spinner fx:id="selectorViajeros" editable="true"/>
+        <Label text="Guía (opcional)" styleClass="etiqueta-campo"/>
+        <HBox spacing="8">
+            <ComboBox fx:id="selectorGuia" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            <Button text="Sin guía" styleClass="boton-secundario" onAction="#quitarGuia"/>
+        </HBox>
+        <CheckBox fx:id="casillaTransporte" text="Transporte"/>
+        <CheckBox fx:id="casillaSeguro" text="Seguro"/>
+        <Label text="Número de tarjeta" styleClass="etiqueta-campo"/>
+        <TextField fx:id="campoTarjeta" promptText="4539 1488 0343 6467"/>
+    </VBox>
+    <VBox spacing="12" styleClass="tarjeta" HBox.hgrow="ALWAYS">
+        <Label text="Valor total" styleClass="metrica-titulo"/>
+        <Label fx:id="etiquetaValor" text="—" styleClass="metrica-valor"/>
+        <Label fx:id="etiquetaError" styleClass="texto-error" wrapText="true"/>
+        <Button text="Confirmar reserva" styleClass="boton-primario" maxWidth="Infinity" onAction="#confirmar"/>
+        <Label text="Voucher" styleClass="etiqueta-campo"/>
+        <TextArea fx:id="areaVoucher" editable="false" VBox.vgrow="ALWAYS" styleClass="voucher"/>
+    </VBox>
+</HBox>

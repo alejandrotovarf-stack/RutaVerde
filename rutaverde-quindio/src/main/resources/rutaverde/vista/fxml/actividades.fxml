@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fitToWidth="true"
+            hbarPolicy="NEVER" fx:controller="rutaverde.controlador.ActividadesControlador">
+    <VBox spacing="18">
+        <padding><Insets top="22" right="36" bottom="28" left="36"/></padding>
+        <VBox spacing="2"><Label text="Actividades" styleClass="titulo"/><Label text="Experiencias para descubrir el Eje Cafetero" styleClass="subtitulo"/></VBox>
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <HBox styleClass="buscador" alignment="CENTER_LEFT" spacing="8" HBox.hgrow="ALWAYS">
+                <Region styleClass="icono icono-buscar icono-pequeno icono-suave"/>
+                <TextField fx:id="campoBuscar" promptText="Buscar actividad…" styleClass="campo-limpio" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            <ComboBox fx:id="comboMunicipio" prefWidth="210"/>
+            <ComboBox fx:id="comboDificultad" prefWidth="210"/>
+            <Button text="Nueva actividad" styleClass="boton-primario" onAction="#nuevaActividad"><graphic><Region styleClass="icono icono-mas icono-blanco"/></graphic></Button>
+        </HBox>
+        <Label fx:id="etiquetaMensaje" styleClass="mensaje" wrapText="true"/>
+        <FlowPane fx:id="tarjetas" hgap="22" vgap="22"/>
+    </VBox>
+</ScrollPane>

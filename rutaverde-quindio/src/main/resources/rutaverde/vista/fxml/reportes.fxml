@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" spacing="18"
+      fx:controller="rutaverde.controlador.ReportesControlador">
+    <padding><Insets top="32" right="36" bottom="32" left="36"/></padding>
+    <VBox spacing="2"><Label text="Reportes" styleClass="titulo"/><Label text="Ingresos por periodo y producto con más viajeros" styleClass="subtitulo"/></VBox>
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <DatePicker fx:id="fechaInicial" promptText="Fecha inicial"/>
+        <DatePicker fx:id="fechaFinal" promptText="Fecha final"/>
+        <Button text="Calcular" styleClass="boton-primario" onAction="#calcular"/>
+    </HBox>
+    <VBox styleClass="metrica" spacing="6"><Label text="Ingresos del periodo" styleClass="texto-suave"/><Label fx:id="etiquetaIngresos" styleClass="numero"/></VBox>
+    <VBox styleClass="metrica" spacing="6"><Label text="Producto con más viajeros" styleClass="texto-suave"/><Label fx:id="etiquetaProductoTop" styleClass="numero-pequeno"/></VBox>
+</VBox>

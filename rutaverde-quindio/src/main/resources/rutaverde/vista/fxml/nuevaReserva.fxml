@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<ScrollPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fitToWidth="true" hbarPolicy="NEVER"
+            fx:controller="rutaverde.controlador.NuevaReservaControlador">
+<VBox spacing="18">
+    <padding><Insets top="22" right="36" bottom="28" left="36"/></padding>
+    <VBox spacing="2"><Label text="Nueva reserva" styleClass="titulo"/><Label text="Cliente, producto, opcionales y pago con confirmación paso a paso" styleClass="subtitulo"/></VBox>
+<HBox spacing="22">
+    <VBox styleClass="panel-vidrio" spacing="12" prefWidth="430">
+        <Label text="Datos de la reserva" styleClass="titulo-seccion"/>
+        <ComboBox fx:id="comboCliente" promptText="Cliente" maxWidth="Infinity"/>
+        <ComboBox fx:id="comboProducto" promptText="Actividad o paquete" maxWidth="Infinity"/>
+        <DatePicker fx:id="selectorFecha" promptText="Fecha de viaje" maxWidth="Infinity"/>
+        <Spinner fx:id="selectorViajeros" editable="true" maxWidth="Infinity"/>
+        <CheckBox fx:id="usarGuia" text="Incluir guía"/>
+        <ComboBox fx:id="comboGuia" promptText="Guía" maxWidth="Infinity"/>
+        <CheckBox fx:id="usarTransporte" text="Transporte"/>
+        <CheckBox fx:id="usarSeguro" text="Seguro"/>
+        <Label text="Valor total" styleClass="texto-suave"/>
+        <Label fx:id="etiquetaValor" styleClass="numero"/>
+        <TextField fx:id="campoTarjeta" promptText="Número de tarjeta"/>
+        <Button fx:id="botonConfirmar" text="Confirmar reserva" styleClass="boton-primario" maxWidth="Infinity" onAction="#confirmar"/>
+        <Label fx:id="etiquetaMensaje" styleClass="mensaje" wrapText="true"/>
+    </VBox>
+    <VBox styleClass="panel-vidrio" spacing="12" HBox.hgrow="ALWAYS">
+        <Label text="Confirmación" styleClass="titulo-seccion"/>
+        <VBox fx:id="listaPasos" spacing="8"/>
+        <Label text="Voucher" styleClass="titulo-seccion"/>
+        <TextArea fx:id="areaVoucher" editable="false" prefHeight="300" minHeight="300"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <ComboBox fx:id="comboFormato"/>
+            <Button fx:id="botonExportar" text="Exportar voucher" styleClass="boton-secundario" onAction="#exportar"/>
+        </HBox>
+    </VBox>
+</HBox>
+</VBox>
+</ScrollPane>
