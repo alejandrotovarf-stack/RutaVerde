@@ -39,7 +39,7 @@ public class ActividadesControlador {
 
     private static final String TODOS_LOS_MUNICIPIOS = "Todos los municipios";
     private static final String TODAS_LAS_DIFICULTADES = "Todas las dificultades";
-    private static final double ANCHO_TARJETA = 300;
+    private static final double ANCHO_TARJETA = 322;
     private static final double ALTO_FOTO = 170;
 
     private final ContextoAplicacion contexto;
